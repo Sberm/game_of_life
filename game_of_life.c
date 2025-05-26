@@ -157,7 +157,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
 	uint64_t now = SDL_GetTicks();
 	if (now - global->prev < MSEC_PER_FRAME) {
-		SDL_Delay(2);
+		SDL_Delay(8);
 		return SDL_APP_CONTINUE;
 	}
 	global->prev = now;
