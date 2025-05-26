@@ -97,7 +97,9 @@ int initGrid(struct Global *global)
 		return -1;
 	}
 
+#ifdef DEBUG
 	SDL_Log("number of states: %d", stateN);
+#endif
 	for (uint32_t i = 0; i < stateN; i++) {
 		uint32_t ii = rand() % global->height;
 		uint32_t jj = rand() % global->width;
