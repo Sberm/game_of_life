@@ -213,26 +213,23 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 		if (currentCube->live == true) {
 			if (adjLiveCnt < 2) {
 				struct Cube update = {.i = i, .j = j, .live= false};
-
 #ifdef DEBUG
 				SDL_Log("under populate, die");
 #endif
-				vec__push(toUpdateV, update);
+				vec__pushp(toUpdateV, &update);
 			} else if (adjLiveCnt > 3) {
 				struct Cube update = {.i = i, .j = j, .live= false};
-
 #ifdef DEBUG
 				SDL_Log("over populate, die");
 #endif
-				vec__push(toUpdateV, update);
+				vec__pushp(toUpdateV, &update);
 			}
 		} else if (adjLiveCnt == 3) {
 			struct Cube update = {.i = i, .j = j, .live= true};
-
 #ifdef DEBUG
 			SDL_Log("dead becomes live, live");
 #endif
-			vec__push(toUpdateV, update);
+			vec__pushp(toUpdateV, &update);
 		}
 	}
 
