@@ -87,9 +87,10 @@ int initGrid(struct Global *global)
 	srand(time(NULL));
 	uint32_t n = global->width * global->height;
 	// n/3 ~ (n/2)
-	uint32_t low = n / 3;
-	uint32_t diff = n / 2 - low;
-	uint32_t stateN = rand() % diff;
+	uint32_t low = n / 10;
+	uint32_t high = n / 7;
+	uint32_t diff = high - low;
+	uint32_t stateN = low + rand() % diff;
 	struct State *states = malloc(sizeof(struct State) * stateN);
 	if (states == NULL) {
 		SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not allocate random states\n");
