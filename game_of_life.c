@@ -12,11 +12,10 @@
 
 #include "vec.h"
 
-// length of a square cube
-#define LEN 4
+#define LEN 8
 
 #define MSEC_PER_FRAME 32
-#define MSEC_PER_EPOCH 10000ULL
+#define MSEC_PER_EPOCH 40000ULL
 
 uint32_t windowWidth = 1920;
 uint32_t windowHeight = 1080;
