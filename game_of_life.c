@@ -156,8 +156,10 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 	uint32_t numberOfCubes = global->width * global->height;
 
 	uint64_t now = SDL_GetTicks();
-	if (now - global->prev < MSEC_PER_FRAME)
+	if (now - global->prev < MSEC_PER_FRAME) {
+		SDL_Delay(2);
 		return SDL_APP_CONTINUE;
+	}
 	global->prev = now;
 
 
